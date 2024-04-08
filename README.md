@@ -43,7 +43,7 @@ Install NodeJS 12.11.x
  $ npm -v
   6.11.3
 ```
-In your project directory, install Jest, Babel and ESList by using the supplied ```javascript package.json``` and run
+In your project directory, install Jest, Babel and ESList by using the supplied ```package.json``` and run
 Install dependencies
 
 ```
