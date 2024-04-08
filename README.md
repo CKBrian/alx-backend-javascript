@@ -30,6 +30,22 @@ To get started with these projects, follow these steps:
 2. Navigate to the project directory:
 
 3. Install the dependencies for each project using npm:
+
+Install NodeJS 12.11.x
+(in your home directory):
+
+```
+ $ curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+ $ sudo bash nodesource_setup.sh
+ $ sudo apt install nodejs -y
+ $ nodejs -v
+  v12.11.1
+ $ npm -v
+  6.11.3
+```
+In your project directory, install Jest, Babel and ESList by using the supplied ```javascript package.json``` and run
+Install dependencies
+
 ```
   $ npm install
 ```
