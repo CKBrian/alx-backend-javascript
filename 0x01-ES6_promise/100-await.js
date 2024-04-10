@@ -2,15 +2,12 @@ import { uploadPhoto, createUser } from './utils';
 
 export default async function asyncUploadUser() {
   try {
-    return Promise
-      .all([uploadPhoto(), createUser()])
-      .then((resp) => {
-        const [photo, user] = resp;
-        return {
-          photo,
-          user,
-        };
-      });
+    const photo = uploadPhoto();
+    const user = createUser();
+    return {
+      photo,
+      user,
+    };
   } catch (e) {
     return {
       photo: null,
