@@ -24,45 +24,23 @@ const studentsList: Student[] = [student1, student2]
 /*Render the table*/
 const table = document.createElement("table");
 /*Welcome message*/
-document.body.appendChild(document.createElement("h1")).textContent = "Welcome to Task 0 students Table";
-
-/*Table Heading*/
-const tHead = document.createElement("tr");
-const fNametitle = document.createElement("th");
-const lNameTitle = document.createElement("th");
-const ageCellTitle = document.createElement("th");
-const locationCellTitle = document.createElement("th");
-
-fNametitle.textContent = "FirstName";
-lNameTitle.textContent = "LastName";
-ageCellTitle.textContent = "Age";
-locationCellTitle.textContent = "Location";
-
-tHead.appendChild(fNametitle);
-tHead.appendChild(lNameTitle)
-tHead.appendChild(locationCellTitle);
-tHead.appendChild(ageCellTitle)
-
-table.appendChild(tHead);
+document.body.appendChild(document.createElement("h1")).textContent = "Welcome to Task 0 Students Table";
 
 studentsList.forEach(student => {
-    const row = document.createElement("tr");
-    const firstNameCell = document.createElement("td");
-    const lastNameCell = document.createElement("td");
-    const ageCell = document.createElement("td");
-    const locationCell = document.createElement("td");
-
-    firstNameCell.textContent = student.firstName;
-    lastNameCell.textContent = student.lastName;
-    ageCell.textContent = student.age;
-    locationCell.textContent = student.location;
-
-    row.appendChild(firstNameCell);
-    row.appendChild(lastNameCell)
-    row.appendChild(locationCell);
-    row.appendChild(ageCell)
-    
-
+  const tHead = document.createElement("tr");
+  const row = document.createElement("tr");
+  for (const key in student) {
+    if (student.hasOwnProperty.call(student, key)) {
+      //heading row
+      tHead.appendChild(document.createElement("th")).textContent = key
+      //rows
+      const element = student[key];
+      const cell = document.createElement("td");
+      row.appendChild(cell).textContent = element
+    }
+  }
+    /*Append the rows to the tables*/ 
+    table.appendChild(tHead);
     table.appendChild(row);
 });
 const cells = table.querySelectorAll("td, th");
