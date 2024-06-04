@@ -3,7 +3,7 @@
  *
  * @param {string} message - The message to be logged.
  */
-function displayMessage (message) {
+const displayMessage = (message) => {
   console.log(message);
-}
+};
 module.exports = displayMessage;
