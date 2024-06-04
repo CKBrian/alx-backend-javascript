@@ -14,8 +14,10 @@ const messages = [
 ];
 
 displayMessage(messages[0]);
-process.stdin.on('data', function (data) {
+process.stdin.on('data', (data) => {
   displayMessage(`${messages[1]} ${data.toString().trim()}`);
+});
+
+process.stdin.on('end', (exit) => {
   displayMessage(messages[2]);
-  process.exit();
 });
