@@ -18,6 +18,7 @@ process.stdin.on('data', (data) => {
   displayMessage(`${messages[1]} ${data.toString().trim()}`);
 });
 
-process.stdin.on('end', (exit) => {
+process.on('SIGINT', () => {
   displayMessage(messages[2]);
+  process.exit();
 });
