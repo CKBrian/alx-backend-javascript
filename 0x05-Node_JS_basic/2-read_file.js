@@ -19,7 +19,8 @@ const countStudents = (path) => {
           fieldList.push(student.split(',')[0]);
         }
       });
-      console.log(`Number of students in ${field}: ${fieldList.length}. List: ${fieldList}`);
+      const names = fieldList.join(', ');
+      console.log(`Number of students in ${field}: ${fieldList.length}. List: ${names}`);
     });
   } catch (err) {
     console.error('Cannot load the database');
