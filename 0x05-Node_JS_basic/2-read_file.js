@@ -7,7 +7,7 @@ const countStudents = (path) => {
 
     fs.existsSync(path, (exists) => {
       if (!exists) {
-        console.error('Cannot load the database');
+        throw new Error('Cannot load the database');
       }
     });
     const data = fs.readFileSync(path, { encoding: 'utf-8', flag: 'r' });
@@ -29,6 +29,7 @@ const countStudents = (path) => {
     });
   } catch (err) {
     console.error('Cannot load the database');
+    throw new Error('Cannot load the database');
   }
 };
 
