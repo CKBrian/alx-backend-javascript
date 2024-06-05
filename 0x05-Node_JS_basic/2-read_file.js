@@ -5,7 +5,7 @@ const countStudents = (path) => {
     const students = [];
     const fields = new Set();
 
-    fs.exists(path, (exists) => {
+    fs.existsSync(path, (exists) => {
       if (!exists) {
         console.error('Cannot load the database');
       }
