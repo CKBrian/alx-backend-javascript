@@ -16,7 +16,6 @@ const countStudents = (path) => new Promise((resolve, reject) => {
 
       const students = [];
       const fields = new Set();
-
       const lines = data.split('\n').filter((line, idx) => idx !== 0 && line.length !== 0);
 
       lines.forEach((line) => {
@@ -24,8 +23,8 @@ const countStudents = (path) => new Promise((resolve, reject) => {
         fields.add(line.split(',')[3]);
       });
 
-      let logEntry = `Number of students: ${students.length}\n`;
-      let entries = '';
+      const logEntry = [`Number of students: ${students.length}`];
+
       fields.forEach((field) => {
         const fieldList = [];
         students.forEach((student) => {
@@ -34,11 +33,11 @@ const countStudents = (path) => new Promise((resolve, reject) => {
           }
         });
         const names = fieldList.join(', ');
-        entries += `Number of students in ${field}: ${fieldList.length}. List: ${names}\n`;
+        logEntry.push(`Number of students in ${field}: ${fieldList.length}. List: ${names}`);
       });
-      logEntry += entries;
-      console.log(logEntry.trim());
-      resolve(logEntry.trim());
+      const log = logEntry.join('\n');
+      console.log(log);
+      resolve(log);
     });
   });
 });
