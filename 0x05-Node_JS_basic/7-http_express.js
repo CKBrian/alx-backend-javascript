@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 });
 app.get('/students', (req, res) => {
   countStudents('database.csv').then((data) => {
-    res.send(`This is the list of our students\n${data}`);
+    res.status(200).send(`This is the list of our students\n${data}`);
   }).catch((err) => {
     res.send(`This is the list of our students\n${err.message}`);
   });
