@@ -24,7 +24,8 @@ const countStudents = (path) => new Promise((resolve, reject) => {
         fields.add(line.split(',')[3]);
       });
 
-      console.log(`Number of students: ${students.length}`);
+      let logEntry = `Number of students: ${students.length}\n`;
+      let entries = '';
       fields.forEach((field) => {
         const fieldList = [];
         students.forEach((student) => {
@@ -33,10 +34,11 @@ const countStudents = (path) => new Promise((resolve, reject) => {
           }
         });
         const names = fieldList.join(', ');
-        console.log(`Number of students in ${field}: ${fieldList.length}. List: ${names}`);
+        entries += `Number of students in ${field}: ${fieldList.length}. List: ${names}\n`;
       });
-
-      resolve();
+      logEntry += entries;
+      console.log(logEntry.trim());
+      resolve(logEntry.trim());
     });
   });
 });
