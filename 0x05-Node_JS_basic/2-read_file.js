@@ -5,6 +5,11 @@ const countStudents = (path) => {
     const students = [];
     const fields = new Set();
 
+    fs.exists(path, (exists) => {
+      if (!exists) {
+        console.error('Cannot load the database');
+      }
+    });
     const data = fs.readFileSync(path, { encoding: 'utf-8', flag: 'r' });
     const lines = data.split('\n').filter((line, idx) => { return idx !== 0 && line.length !== 0; });
     lines.forEach((line) => {
