@@ -6,8 +6,8 @@ const app = http.createServer((req, resp) => {
     resp.write('Hello Holberton School!');
     resp.end();
   } else if (req.url === '/students') {
+    resp.write('This is the list of our students\n');
     countStudents('database.csv').then((data) => {
-      resp.write('This is the list of our students\n');
       console.log(data);
       resp.end(data);
     }).catch((err) => {
