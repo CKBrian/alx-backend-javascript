@@ -1,0 +1,20 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "0-calculus.js",
+  "dependencies": {
+    "tap": "^19.2.1"
+  },
+  "devDependencies": {
+    "mocha": "^10.4.0",
+    "nodemon": "^3.1.3"
+  },
+  "scripts": {
+    "test": "mocha **/*.test.js",
+    "test-watch": "nodemon --exec \"npm test\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
