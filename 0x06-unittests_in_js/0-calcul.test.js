@@ -9,8 +9,12 @@ it('should add two numbers: second number rounded', () => {
   const res = calculateNumber(1, 3.7);
   assert.strictEqual(res, 5);
 });
+it('should add two numbers: both numbers rounded', () => {
+  const res = calculateNumber(1.4, 3.3);
+  assert.strictEqual(res, 5);
+});
 it('should add two numbers: first number rounded', () => {
-  const res = calculateNumber(1.5, 3);
+  const res = calculateNumber(1.5, 3.3);
   assert.strictEqual(res, 5);
 });
 it('should add two numbers: both numbers rounded', () => {
