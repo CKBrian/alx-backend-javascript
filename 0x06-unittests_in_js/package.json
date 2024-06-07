@@ -3,18 +3,37 @@
   "version": "1.0.0",
   "description": "",
   "main": "0-calculus.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint",
+    "check-lint": "lint [0-9]*.js",
+    "test": "mocha",
+    "test-watch": "nodemon --exec \"npm test *.test.js\"",
+    "dev": "nodemon --exec babel-node --presets babel-preset-env ./server.js ./database.csv"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
+    "@sinonjs/referee-sinon": "^12.0.0",
+    "chai-http": "^4.4.0",
+    "express": "^4.19.2",
+    "jsverify": "^0.8.4",
+    "knuth-shuffle": "^1.0.8",
     "tap": "^19.2.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^0.0.0",
+    "chai": "^5.1.1",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^28.5.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.2.0",
     "mocha": "^10.4.0",
-    "nodemon": "^3.1.3"
-  },
-  "scripts": {
-    "test": "mocha **/*.test.js",
-    "test-watch": "nodemon --exec \"npm test\""
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "nodemon": "^3.1.3",
+    "request": "^2.88.0",
+    "sinon": "^18.0.0"
+  }
 }
