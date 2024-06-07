@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const sinon = require('sinon');
-const getPaymentTokenFromAPI = require('./6-payment_token_0');
+const getPaymentTokenFromAPI = require('./6-payment_token');
 
 
 describe('getPaymentTokenFromAPI', () => {
@@ -9,6 +9,11 @@ describe('getPaymentTokenFromAPI', () => {
   beforeEach( () => {
     spyAsync = sinon.spy();
   });
+  afterEach( () => {
+    sinon.restore();
+  });
+
+
 
   it('should test an async function', (done) => {
     getPaymentTokenFromAPI(true).then( (data) => {
