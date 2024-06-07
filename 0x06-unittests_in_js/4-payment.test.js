@@ -9,7 +9,8 @@ describe('sendPaymentRequestToApi', () => {
     const spyUtils = sinon.spy(console, 'log');
     sendPaymentRequestToApi(100, 20);
     expect(stubUtils.calledWith('SUM', 100, 20)).to.be.true;
-	  expect(spyUtils.calledWith('The total is: 10')).to.be.equal(true);
+    expect(spyUtils.calledWith('The total is: 10')).to.be.equal(true);
     stubUtils.restore();
+    spyUtils.restore();
   });
 });
