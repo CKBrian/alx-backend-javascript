@@ -9,11 +9,6 @@ describe('getPaymentTokenFromAPI', () => {
   beforeEach( () => {
     spyAsync = sinon.spy();
   });
-  afterEach( () => {
-    sinon.restore();
-  });
-
-
 
   it('should test an async function', (done) => {
     getPaymentTokenFromAPI(true).then( (data) => {
